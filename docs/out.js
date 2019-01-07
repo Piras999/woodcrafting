@@ -112,30 +112,55 @@ __webpack_require__(/*! ../CSS/style.scss */ "./CSS/style.scss");
 document.addEventListener("DOMContentLoaded", function (event) {
     console.log("ok");
 
-    var myText = document.getElementById("bounceTxt").innerHTML,
-        wrapText = "";
+    ready(); //burger menu Functionality
 
-    for (var i = 0; i < myText.length; i++) {
-        wrapText += "<em>" + myText.charAt(i) + "</em>";
+    headerCarousel(); //header automatic slideshow fuctionality
+
+    function headerCarousel() {
+        var headerForCarousel = document.querySelector("header");
+        console.log(headerForCarousel.classList);
+
+        if (headerForCarousel.classList.value === "") {
+            headerForCarousel.classList.add("backgroundChange");
+            setTimeout(headerCarousel, 7000);
+        } else if (headerForCarousel.className === "backgroundChange") {
+            headerForCarousel.classList.remove("backgroundChange");
+            headerForCarousel.classList.add("backgroundChange1");
+            setTimeout(headerCarousel, 7000);
+        } else if (headerForCarousel.className === "backgroundChange1") {
+            headerForCarousel.classList.remove("backgroundChange1");
+            headerForCarousel.classList.add("backgroundChange2");
+            setTimeout(headerCarousel, 7000);
+        } else if (headerForCarousel.className === "backgroundChange2") {
+            headerForCarousel.classList.remove("backgroundChange2");
+            headerForCarousel.classList.add("backgroundChange3");
+            setTimeout(headerCarousel, 7000);
+        } else if (headerForCarousel.className === "backgroundChange3") {
+            headerForCarousel.classList.remove("backgroundChange3");
+            headerForCarousel.classList.add("backgroundChange");
+            setTimeout(headerCarousel, 7000);
+        }
     }
 
-    document.getElementById("bounceTxt").innerHTML = wrapText;
+    function ready() {
+        var menuTab = document.querySelector(".menu-tab");
+        var menuHide = document.querySelector(".menu-hide");
+        var menuStrip = document.querySelector(".menuStrip");
 
-    var myLetters = document.getElementsByTagName("em"),
-        j = 0;
+        console.log(menuTab);
+        console.log(menuHide);
+        console.log(menuStrip);
 
-    function applyBounce() {
-        setTimeout(function () {
-            myLetters[j].className = "bounce-me";
-            j++;
+        menuTab.addEventListener("click", function () {
+            menuHide.classList.toggle("show");
+            menuTab.classList.toggle("active");
+        });
 
-            if (j < myLetters.length) {
-                applyBounce();
-            }
-        }, 250);
+        menuStrip.addEventListener("click", function () {
+            menuHide.removeClass("show");
+            menuTab.removeClass("active");
+        });
     }
-
-    applyBounce();
 });
 
 /***/ }),

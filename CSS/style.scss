@@ -4,67 +4,19 @@
          url('../fonts/bellfortroughdemo-webfont.woff') format('woff');
   }
 
+@import "./main.scss";
+@import "./visible.scss";
+@import "./header.scss";
+@import "./hamburgerMenu.scss";
+@import "./menuCarousel.scss";
 
+//simple css reset
 
-body {
-    background-image: url("../img/maintheme.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-section {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.down{
-    background-color: white;
-    height: 20vh;
-    width: 100vw;
-}
-
-.bounce {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-}
-
-.bounce p {
-    color: yellow;
-    font-family: bellfort_rough_demoregular;
-    font-size: 72px;
-    font-weight: 400;
-    letter-spacing: 0.5em;
-    text-align: center;
-    text-shadow: 3px 5px 5px rgba(0, 0, 0, .3);
-    
-    em {
-         font-style: normal;
-         display: inline-block;
-         
-         
-         &.bounce-me {
-              -webkit-animation: bounce 4s infinite ease-in-out;
-              animation: bounce 4s infinite ease-in-out;
-         }
-    }
-}
-
-@-webkit-keyframes bounce {
-    60% {
-         -webkit-transform: translate(0px, -100px) scale(1.2);
-         opacity: 0.8;
-         text-shadow: 0px 150px 20px rgba(0, 0, 0, 0.8);
-    }
-}
-
-@keyframes bounce {
-    60% {
-         -webkit-transform: translate(0px, -100px) scale(1.2);
-         opacity: 0.8;
-         text-shadow: 0px 150px 20px rgba(0, 0, 0, 0.8);
-    }
-}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    ol, ul {
+        list-style: none;
+      }
+  }
