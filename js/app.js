@@ -7,8 +7,10 @@ document.addEventListener("DOMContentLoaded", function(event){
 
     headerCarousel(); //header automatic slideshow fuctionality
 
+    imgSlider(); //imgsectionslider
+
     function headerCarousel(){
-        var headerForCarousel = document.querySelector("header")
+        var headerForCarousel = document.querySelector("header");
         console.log(headerForCarousel.classList);
 
 
@@ -55,6 +57,35 @@ document.addEventListener("DOMContentLoaded", function(event){
         menuStrip.addEventListener("click", function(){
             menuHide.removeClass("show");
             menuTab.removeClass("active");
+        });
+    }
+
+    function imgSlider() {
+        var nextPicture = document.querySelector(".nav");
+        var prevPicture = document.querySelector(".nav1");
+        var listLi = document.querySelectorAll(".imgList");
+
+        var counter = 0;
+        listLi[counter].classList.remove('hidden');
+
+        nextPicture.addEventListener("click", function () {
+            listLi[counter].classList.add('hidden');
+            if(counter >= listLi.length-1){
+                counter = 0;
+            }else{
+                counter++;
+            }
+            listLi[counter].classList.remove('hidden');
+        });
+
+        prevPicture.addEventListener("click", function () {
+            listLi[counter].classList.add('hidden');
+            if(counter === 0){
+                counter = listLi.length-1;
+            }else{
+                counter--;
+            }
+            listLi[counter].classList.remove('hidden');
         });
     }
 
