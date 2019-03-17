@@ -1,0 +1,44 @@
+.aboutNav{
+    color: white;
+    background-color: black;
+    width: 100vw;
+    height: 5vh;
+    // border: 1px solid green;
+    box-shadow: 0px 5px 50px 0px rgba(255, 255, 255, 0.555);
+}
+
+.aboutSection{
+    // margin-top: 5rem;
+}
+
+.aboutContainer{
+    height: 45vh;
+    width: 100vw;
+    // border: 1px solid red;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.aboutPhoto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 40vw;
+    // border: 1px solid blue;
+}
+
+.aboutText{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 40vw;
+    // border: 1px solid brown;
+    color: white;
+    h1{
+        margin-bottom: 3rem;
+    }
+}

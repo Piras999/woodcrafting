@@ -81,15 +81,15 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/app.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./CSS/style.scss":
-/*!************************!*\
-  !*** ./CSS/style.scss ***!
-  \************************/
+/***/ "./src/CSS/style.scss":
+/*!****************************!*\
+  !*** ./src/CSS/style.scss ***!
+  \****************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -97,17 +97,17 @@
 
 /***/ }),
 
-/***/ "./js/app.js":
-/*!*******************!*\
-  !*** ./js/app.js ***!
-  \*******************/
+/***/ "./src/js/app.js":
+/*!***********************!*\
+  !*** ./src/js/app.js ***!
+  \***********************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(/*! ../CSS/style.scss */ "./CSS/style.scss");
+__webpack_require__(/*! ../CSS/style.scss */ "./src/CSS/style.scss");
 
 document.addEventListener("DOMContentLoaded", function (event) {
     console.log("ok");
@@ -118,28 +118,33 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     imgSlider(); //imgsectionslider
 
-    function headerCarousel() {
-        var headerForCarousel = document.querySelector("header");
-        console.log(headerForCarousel.classList);
 
-        if (headerForCarousel.classList.value === "") {
-            headerForCarousel.classList.add("backgroundChange");
+    function headerCarousel() {
+        var header = document.querySelector("header");
+
+        //automatic slideshow - change background image every 7 sec - without loading background images
+
+        if (header.classList.value.indexOf("debil") !== -1) {
+            header.classList.remove("debil");
+            // console.log(header);
             setTimeout(headerCarousel, 7000);
-        } else if (headerForCarousel.className === "backgroundChange") {
-            headerForCarousel.classList.remove("backgroundChange");
-            headerForCarousel.classList.add("backgroundChange1");
+        } else if (header.classList.value.indexOf("backgroundChange backgroundChange1 backgroundChange2 backgroundChange3") !== -1) {
+            header.classList.remove("backgroundChange3");
+            // console.log(header);
             setTimeout(headerCarousel, 7000);
-        } else if (headerForCarousel.className === "backgroundChange1") {
-            headerForCarousel.classList.remove("backgroundChange1");
-            headerForCarousel.classList.add("backgroundChange2");
+        } else if (header.classList.value.indexOf("backgroundChange backgroundChange1 backgroundChange2") !== -1) {
+            header.classList.remove("backgroundChange2");
+            // console.log(header);
             setTimeout(headerCarousel, 7000);
-        } else if (headerForCarousel.className === "backgroundChange2") {
-            headerForCarousel.classList.remove("backgroundChange2");
-            headerForCarousel.classList.add("backgroundChange3");
+        } else if (header.classList.value.indexOf("backgroundChange backgroundChange1") !== -1) {
+            header.classList.remove("backgroundChange1");
+            // console.log(header);
             setTimeout(headerCarousel, 7000);
-        } else if (headerForCarousel.className === "backgroundChange3") {
-            headerForCarousel.classList.remove("backgroundChange3");
-            headerForCarousel.classList.add("backgroundChange");
+        } else if (header.classList.value.indexOf("backgroundChange") !== -1) {
+            header.classList.add("backgroundChange1");
+            header.classList.add("backgroundChange2");
+            header.classList.add("backgroundChange3");
+            // console.log(header);
             setTimeout(headerCarousel, 7000);
         }
     }
@@ -159,8 +164,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
         });
 
         menuStrip.addEventListener("click", function () {
-            menuHide.removeClass("show");
-            menuTab.removeClass("active");
+            menuHide.classList.removeClass("show");
+            menuTab.classList.removeClass("active");
         });
     }
 
@@ -194,19 +199,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
 });
 
-/***/ }),
-
-/***/ 0:
-/*!*************************!*\
-  !*** multi ./js/app.js ***!
-  \*************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! ./js/app.js */"./js/app.js");
-
-
 /***/ })
 
 /******/ });
-//# sourceMappingURL=out.js.map
+//# sourceMappingURL=home.out.js.map

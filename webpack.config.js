@@ -4,11 +4,33 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-	entry: ['./js/app.js'], //entry file, may be many files separated with commas
-	output: {
-		path: path.resolve(__dirname, 'docs'), //output directory
-		filename: 'out.js' //output file (merge all JS-files will into one app.js file)
-	},
+	// entry: {
+	// 	home: './src/js/app.js',
+	// 	about: './src/js/o_nas.js',
+	// 	gallery: './src/js/gallery.js',
+	// 	contact: './src/js/contact.js'
+	// },
+	// output: {
+	// 	path: path.resolve(__dirname, 'docs'), //output directory
+	// 	filename: '[name].out.js' 
+	// },
+
+		entry: {
+		  'bundle.js': [
+			path.resolve(__dirname, './src/js/app.js'),
+			path.resolve(__dirname, './src/js/o_nas.js'),
+			path.resolve(__dirname, './src/js/gallery.js'),
+			path.resolve(__dirname, './src/js/contact.js')
+		  ]
+		},
+		output: {
+		  filename: '[name]',
+		  path: path.resolve(__dirname, 'docs'),
+		},
+
+
+
+
 	module: {
 		rules: [
 			//scripts rule (*.js)
@@ -76,25 +98,36 @@ module.exports = {
 						outputPath: 'fonts'
 					}
 				}
+			},
+			{
+				test: /\.html$/,
+				use: {
+					loader: 'file-loader',
+					options: {
+						name: '[name].[ext]'
+					}
+				},
+				exclude: path.resolve(__dirname, 'index.html')
 			}
 		]
 	},
 	plugins: [
 		//cleans directory (dest)
 		new CleanWebpackPlugin(['dest']),
-		//adds all styles and scripts to the template index.html
-		//and puts that file to the output directory as index.html file
+		
 		new HtmlWebpackPlugin({
 			filename: 'index.html',
+			inject: "body",
+			chunks: ["app"],
 			template: 'index.html'
 		}),
-		//merges all CSS files into one stye.scss file
+		
 		new MiniCssExtractPlugin({
 			filename: 'app.css'
 		})
 	],
 	devServer: {
-		filename: './dest/out.js',
+		filename: './docs/out.js',
 	},
 	watch: true,
 	mode: 'development', //alternative 'production'

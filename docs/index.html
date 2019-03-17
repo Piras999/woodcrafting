@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Na pniu!</title>
-    <link rel="stylesheet" href="/CSS/main.css">
-    <link rel="icon" type="image/jpg" href="img/napniu.jpg">
+    <link rel="stylesheet" href="app.css">
+    <link rel="icon" type="image/jpg" href="./src/img/napniu.jpg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<link href="app.css" rel="stylesheet"></head>
+</head>
 <body>
-    <header>
+    <header class="backgroundChange backgroundChange1 backgroundChange2 backgroundChange3 debil">
+
         <ul class="navBar">
             <li class="logo">NA PNIU</li>
             <li class="burgerMenu">
@@ -20,9 +21,9 @@
                 <div class="menu-hide">
                     <nav>
                         <ul>
-                            <li><a class="menuStrip" href="#">O NAS</a></li>
-                            <li><a class="menuStrip" href="#">GALERIA</a></li>
-                            <li><a class="menuStrip" href="#">KONTAKT</a></li>
+                            <li><a class="menuStrip" href="./src/o_nas/about.html">O NAS</a></li>
+                            <li><a class="menuStrip" href="./src/gallery/gallery.html">GALERIA</a></li>
+                            <li><a class="menuStrip" href="./src/contact/contact.html">KONTAKT</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -33,7 +34,8 @@
         </ul>
     </header>
     
-    <section class="main">
+    <section class="main sectionIndex">
+
         <div class="nav"></div>
         <div class="imgList img hidden"></div>
         <div class="imgList img1 hidden"></div>
@@ -42,21 +44,15 @@
         <div class="imgList img4 hidden"></div>
         <div class="imgList img5 hidden"></div>
         <div class="imgList img6 hidden"></div>
-        <!-- <div class="product_description">
-            <h1>SIT <span class="important_text">ON</span> OUR <span class="important_text">CHAIR</span></h1>
-                <p>
-                    Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis.
-                    Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula.
-                    Ut molestie a, ultricies porta urna.
-                </p>
-                <button>ZOBACZ WIĘCEJ</button>
-        </div> -->
         <div class="nav1"></div>
+
     </section>
     
     <footer>
+
         <div class="down">debil</div>
+
     </footer>
-    <script src="/js/main.js"></script>
-<script type="text/javascript" src="out.js"></script></body>
+    <script src="bundle.js"></script>
+</body>
 </html>

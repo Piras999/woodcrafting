@@ -9,29 +9,33 @@ document.addEventListener("DOMContentLoaded", function(event){
 
     imgSlider(); //imgsectionslider
 
+
     function headerCarousel(){
-        var headerForCarousel = document.querySelector("header");
-        console.log(headerForCarousel.classList);
+        var header = document.querySelector("header");
 
+        //automatic slideshow - change background image every 7 sec - without loading background images
 
-        if (headerForCarousel.classList.value === ""){
-            headerForCarousel.classList.add("backgroundChange")
+        if (header.classList.value.indexOf("debil") !== -1){
+            header.classList.remove("debil")
+            // console.log(header);
             setTimeout(headerCarousel, 7000);
-        }else if (headerForCarousel.className === "backgroundChange"){
-            headerForCarousel.classList.remove("backgroundChange");
-            headerForCarousel.classList.add("backgroundChange1")
+        }else if (header.classList.value.indexOf("backgroundChange backgroundChange1 backgroundChange2 backgroundChange3") !== -1){
+            header.classList.remove("backgroundChange3");
+            // console.log(header);
             setTimeout(headerCarousel, 7000);
-        }else if(headerForCarousel.className === "backgroundChange1"){
-            headerForCarousel.classList.remove("backgroundChange1");
-            headerForCarousel.classList.add("backgroundChange2")
+        }else if (header.classList.value.indexOf("backgroundChange backgroundChange1 backgroundChange2") !== -1){
+            header.classList.remove("backgroundChange2");
+            // console.log(header);
             setTimeout(headerCarousel, 7000);
-        }else if(headerForCarousel.className === "backgroundChange2"){
-            headerForCarousel.classList.remove("backgroundChange2");
-            headerForCarousel.classList.add("backgroundChange3")
+        }else if (header.classList.value.indexOf("backgroundChange backgroundChange1") !== -1){
+            header.classList.remove("backgroundChange1");
+            // console.log(header);
             setTimeout(headerCarousel, 7000);
-        }else if(headerForCarousel.className === "backgroundChange3"){
-            headerForCarousel.classList.remove("backgroundChange3");
-            headerForCarousel.classList.add("backgroundChange")
+        }else if (header.classList.value.indexOf("backgroundChange") !== -1){
+            header.classList.add("backgroundChange1");
+            header.classList.add("backgroundChange2");
+            header.classList.add("backgroundChange3");
+            // console.log(header);
             setTimeout(headerCarousel, 7000);
         }
     }
@@ -55,8 +59,8 @@ document.addEventListener("DOMContentLoaded", function(event){
         });
 
         menuStrip.addEventListener("click", function(){
-            menuHide.removeClass("show");
-            menuTab.removeClass("active");
+            menuHide.classList.removeClass("show");
+            menuTab.classList.removeClass("active");
         });
     }
 
@@ -88,5 +92,4 @@ document.addEventListener("DOMContentLoaded", function(event){
             listLi[counter].classList.remove('hidden');
         });
     }
-
 });
