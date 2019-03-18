@@ -4,17 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-	// entry: {
-	// 	home: './src/js/app.js',
-	// 	about: './src/js/o_nas.js',
-	// 	gallery: './src/js/gallery.js',
-	// 	contact: './src/js/contact.js'
-	// },
-	// output: {
-	// 	path: path.resolve(__dirname, 'docs'), //output directory
-	// 	filename: '[name].out.js' 
-	// },
-
 		entry: {
 		  'bundle.js': [
 			path.resolve(__dirname, './src/js/app.js'),
@@ -27,10 +16,6 @@ module.exports = {
 		  filename: '[name]',
 		  path: path.resolve(__dirname, 'docs'),
 		},
-
-
-
-
 	module: {
 		rules: [
 			//scripts rule (*.js)
@@ -83,7 +68,7 @@ module.exports = {
 					loader: 'file-loader',
 					options: {
 						name: '[name].[ext]',
-						outputPath: 'images'
+						outputPath: 'img'
 					}
 				}
 			},
@@ -117,9 +102,30 @@ module.exports = {
 		
 		new HtmlWebpackPlugin({
 			filename: 'index.html',
-			inject: "body",
+			inject: "false",
 			chunks: ["app"],
 			template: 'index.html'
+		}),
+
+		new HtmlWebpackPlugin({
+			filename: './src/o_nas/about.html',
+			inject: "false",
+			chunks: ["o_nas"],
+			template: './src/o_nas/about.html'
+		}),
+
+		new HtmlWebpackPlugin({
+			filename: './src/contact/contact.html',
+			inject: "false",
+			chunks: ["contact"],
+			template: './src/contact/contact.html'
+		}),
+
+		new HtmlWebpackPlugin({
+			filename: './src/gallery/gallery.html',
+			inject: "false",
+			chunks: ["gallery"],
+			template: './src/gallery/gallery.html'
 		}),
 		
 		new MiniCssExtractPlugin({

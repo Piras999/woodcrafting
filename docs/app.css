@@ -110,16 +110,16 @@ header {
   transition: all .6s ease-in-out; }
 
 .backgroundChange {
-  background-image: url(images/warsztat.jpeg); }
+  background-image: url(img/warsztat.jpeg); }
 
 .backgroundChange1 {
-  background-image: url(images/warsztat1.jpeg); }
+  background-image: url(img/warsztat1.jpeg); }
 
 .backgroundChange2 {
-  background-image: url(images/warsztat2.jpg); }
+  background-image: url(img/warsztat2.jpg); }
 
 .backgroundChange3 {
-  background-image: url(images/warsztat3.jpeg); }
+  background-image: url(img/warsztat3.jpeg); }
 
 .sectionIndex {
   width: 100vw;
@@ -141,28 +141,28 @@ header {
 .main .img, .img1, .img2, .img3, .img4, .img5, .img6 {
   width: 15rem;
   height: 15rem;
-  background-image: url(images/1.jpg);
+  background-image: url(img/1.jpg);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: 50% 50%; }
 
 .main .img1 {
-  background-image: url(images/2.jpg); }
+  background-image: url(img/2.jpg); }
 
 .main .img2 {
-  background-image: url(images/3.jpg); }
+  background-image: url(img/3.jpg); }
 
 .main .img3 {
-  background-image: url(images/4.jpg); }
+  background-image: url(img/4.jpg); }
 
 .main .img4 {
-  background-image: url(images/5.jpg); }
+  background-image: url(img/5.jpg); }
 
 .main .img5 {
-  background-image: url(images/6.jpg); }
+  background-image: url(img/6.jpg); }
 
 .main .img6 {
-  background-image: url(images/7.jpg); }
+  background-image: url(img/7.jpg); }
 
 .main .product_description {
   width: 437px;
@@ -231,6 +231,12 @@ footer {
   color: white; }
   .aboutText h1 {
     margin-bottom: 3rem; }
+
+.peter {
+  background-image: url(img/peter.jpeg); }
+
+.simon {
+  background-image: url(img/simon.jpg); }
 
 .containerForContact {
   width: 100vw;
