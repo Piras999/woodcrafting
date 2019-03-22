@@ -14,7 +14,8 @@ module.exports = {
 		},
 		output: {
 		  filename: '[name]',
-		  path: path.resolve(__dirname, 'docs'),
+		  // tu na dole zrobilem zamiast 'docs' -> ''
+		  path: path.resolve(__dirname, 'debil'),
 		},
 	module: {
 		rules: [
@@ -61,7 +62,7 @@ module.exports = {
 					}
 				]
 			},
-			//images rule
+			// images rule
 			{
 				test: /\.(jpg|jpeg|gif|png)$/,
 				use: {
@@ -72,18 +73,18 @@ module.exports = {
 					}
 				}
 			},
-			//fonts rule
-			{
-				test: /\.(eot|ttf|woff|woff2)$/,
-				use: {
-					loader: 'file-loader',
-					options: {
-						name: '[name].[ext]',
-						publicPath: 'fonts',
-						outputPath: 'fonts'
-					}
-				}
-			},
+			// fonts rule
+			// {
+			// 	test: /\.(eot|ttf|woff|woff2)$/,
+			// 	use: {
+			// 		loader: 'file-loader',
+			// 		options: {
+			// 			name: '[name].[ext]',
+			// 			publicPath: 'fonts',
+			// 			outputPath: 'fonts'
+			// 		}
+			// 	}
+			// },
 			{
 				test: /\.html$/,
 				use: {
@@ -98,42 +99,42 @@ module.exports = {
 	},
 	plugins: [
 		//cleans directory (dest)
-		new CleanWebpackPlugin(['dest']),
+		new CleanWebpackPlugin(['']),
 		
-		new HtmlWebpackPlugin({
-			filename: 'index.html',
-			inject: "false",
-			chunks: ["app"],
-			template: 'index.html'
-		}),
+		// new HtmlWebpackPlugin({
+		// 	filename: 'index.html',
+		// 	inject: "false",
+		// 	chunks: ["app"],
+		// 	template: 'index.html'
+		// }),
 
-		new HtmlWebpackPlugin({
-			filename: './src/o_nas/about.html',
-			inject: "false",
-			chunks: ["o_nas"],
-			template: './src/o_nas/about.html'
-		}),
+		// new HtmlWebpackPlugin({
+		// 	filename: './src/o_nas/about.html',
+		// 	inject: "false",
+		// 	chunks: ["o_nas"],
+		// 	template: './src/o_nas/about.html'
+		// }),
 
-		new HtmlWebpackPlugin({
-			filename: './src/contact/contact.html',
-			inject: "false",
-			chunks: ["contact"],
-			template: './src/contact/contact.html'
-		}),
+		// new HtmlWebpackPlugin({
+		// 	filename: './src/contact/contact.html',
+		// 	inject: "false",
+		// 	chunks: ["contact"],
+		// 	template: './src/contact/contact.html'
+		// }),
 
-		new HtmlWebpackPlugin({
-			filename: './src/gallery/gallery.html',
-			inject: "false",
-			chunks: ["gallery"],
-			template: './src/gallery/gallery.html'
-		}),
+		// new HtmlWebpackPlugin({
+		// 	filename: './src/gallery/gallery.html',
+		// 	inject: "false",
+		// 	chunks: ["gallery"],
+		// 	template: './src/gallery/gallery.html'
+		// }),
 		
 		new MiniCssExtractPlugin({
 			filename: 'app.css'
 		})
 	],
 	devServer: {
-		filename: './docs/out.js',
+		filename: './bundle.js',
 	},
 	watch: true,
 	mode: 'development', //alternative 'production'
