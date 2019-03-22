@@ -1,7 +1,7 @@
 {
   "name": "1",
   "version": "1.0.0",
-  "description": "",
+  "description": "simple page created to show You wood-crafting skills",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,5 +17,13 @@
     "gulp": "^3.9.1",
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Husamoa/woodcrafting.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Husamoa/woodcrafting/issues"
+  },
+  "homepage": "https://github.com/Husamoa/woodcrafting#readme"
 }
